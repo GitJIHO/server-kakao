@@ -42,6 +42,9 @@ public class Wish {
     @CreatedDate
     private LocalDateTime createdDate;
 
+    @Schema(description = "Date and time when the wish was created", example = "2024-07-28T17:04:18.834374")
+    private LocalDateTime createdDate;
+
     protected Wish() {
 
     }
