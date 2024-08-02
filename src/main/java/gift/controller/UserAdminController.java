@@ -7,6 +7,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -58,5 +61,10 @@ public class UserAdminController {
             return "user-edit";
         }
         return "redirect:/admin/users";
+    }
+
+    @GetMapping("/healthcheck")
+    public ResponseEntity<Void> healthcheck() {
+        return ResponseEntity.ok().build();
     }
 }
